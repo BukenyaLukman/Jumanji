@@ -26,7 +26,7 @@ import java.util.HashMap;
 
 public class AdminMantainProductsActivity extends AppCompatActivity {
 
-    private Button ApplyChangesBtn;
+    private Button ApplyChangesBtn,deleteBtn;
     private EditText name,price,description,location;
     private ImageView imageView;
 
@@ -48,6 +48,7 @@ public class AdminMantainProductsActivity extends AppCompatActivity {
         description = findViewById(R.id.product_description_maintain);
         location = findViewById(R.id.product_location_maintain);
         imageView = findViewById(R.id.product_image_maintain);
+        deleteBtn = findViewById(R.id.delete_product_btn);
 
 
         displaySpecificInfo();
@@ -56,6 +57,13 @@ public class AdminMantainProductsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ApplyChanges();
+            }
+        });
+
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteProduct();
             }
         });
     }
@@ -91,8 +99,21 @@ public class AdminMantainProductsActivity extends AppCompatActivity {
                     }
                 }
             });
+
         }
 
+    }
+
+    private void deleteProduct() {
+        productRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Intent intent = new Intent(AdminMantainProductsActivity.this,HomeActivity.class);
+                startActivity(intent);
+                finish();
+                Toast.makeText(AdminMantainProductsActivity.this, "Product deleted Successfully...", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void SendAdminToCategoryActivity() {
