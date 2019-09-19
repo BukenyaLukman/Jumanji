@@ -1,4 +1,4 @@
-package com.example.jumanji;
+package com.example.jumanji.Admin;
 
 
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.jumanji.HomeActivity;
+import com.example.jumanji.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -60,6 +62,7 @@ public class AdminMantainProductsActivity extends AppCompatActivity {
             }
         });
 
+
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +111,7 @@ public class AdminMantainProductsActivity extends AppCompatActivity {
         productRef.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Intent intent = new Intent(AdminMantainProductsActivity.this,HomeActivity.class);
+                Intent intent = new Intent(AdminMantainProductsActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
                 Toast.makeText(AdminMantainProductsActivity.this, "Product deleted Successfully...", Toast.LENGTH_SHORT).show();
@@ -117,7 +120,7 @@ public class AdminMantainProductsActivity extends AppCompatActivity {
     }
 
     private void SendAdminToCategoryActivity() {
-        Intent intent = new Intent(AdminMantainProductsActivity.this,AdminCategoryActivity.class);
+        Intent intent = new Intent(AdminMantainProductsActivity.this, AdminCategoryActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

@@ -1,4 +1,4 @@
-package com.example.jumanji;
+package com.example.jumanji.Admin;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.jumanji.Model.Cart;
+import com.example.jumanji.R;
 import com.example.jumanji.ViewHolder.CartViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;

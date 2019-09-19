@@ -20,6 +20,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jumanji.Admin.AdminCategoryActivity;
+import com.example.jumanji.Admin.AdminMantainProductsActivity;
 import com.example.jumanji.Model.Products;
 import com.example.jumanji.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -253,7 +255,7 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(HomeActivity.this,SettingsActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_seller) {
-            Intent intent = new Intent(HomeActivity.this,AdminCategoryActivity.class);
+            Intent intent = new Intent(HomeActivity.this, AdminCategoryActivity.class);
             startActivity(intent);
             finish();
 

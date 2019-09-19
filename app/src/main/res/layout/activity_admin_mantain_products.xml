@@ -8,7 +8,7 @@
     android:layout_marginTop="20dp"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
-    tools:context=".AdminMantainProductsActivity">
+    tools:context=".Admin.AdminMantainProductsActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
     private CircleImageView profileImageView;
     private EditText fullNameEditText,userPhoneEditText,addressEditText;
     private TextView profileChangeTextBtn, CloseTextBtn, saveTextButton;
+    private Button SecurityQuestionsBtn;
     private FirebaseUser firebaseAuth;
 
     private Uri imageUri;
@@ -57,13 +59,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance().getCurrentUser();
 
-        profileImageView = (CircleImageView) findViewById(R.id.settings_profile_image);
-        fullNameEditText = (EditText) findViewById(R.id.settings_full_name);
-        userPhoneEditText = (EditText) findViewById(R.id.settings_phone_number);
-        addressEditText= (EditText) findViewById(R.id.settings_address);
-        profileChangeTextBtn = (TextView) findViewById(R.id.profile_image_change_btn);
-        CloseTextBtn = (TextView) findViewById(R.id.close_settings_btn);
-        saveTextButton = (TextView) findViewById(R.id.update_account_settings_btn);
+        profileImageView = findViewById(R.id.settings_profile_image);
+        fullNameEditText = findViewById(R.id.settings_full_name);
+        userPhoneEditText = findViewById(R.id.settings_phone_number);
+        addressEditText= findViewById(R.id.settings_address);
+        profileChangeTextBtn = findViewById(R.id.profile_image_change_btn);
+        CloseTextBtn = findViewById(R.id.close_settings_btn);
+        saveTextButton = findViewById(R.id.update_account_settings_btn);
+        SecurityQuestionsBtn = findViewById(R.id.security_questions_btn);
         
         
         
@@ -99,7 +102,14 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-
+        SecurityQuestionsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsActivity.this,ResetPasswordActivity.class);
+                intent.putExtra("check","settings");
+                startActivity(intent);
+            }
+        });
 
     }
 

@@ -1,8 +1,7 @@
-package com.example.jumanji;
+package com.example.jumanji.Admin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.jumanji.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -212,7 +212,7 @@ public class AdminAddNewProductsActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Intent intent = new Intent(AdminAddNewProductsActivity.this,AdminCategoryActivity.class);
+                            Intent intent = new Intent(AdminAddNewProductsActivity.this, AdminCategoryActivity.class);
                             startActivity(intent);
 
                             loadingBar.dismiss();

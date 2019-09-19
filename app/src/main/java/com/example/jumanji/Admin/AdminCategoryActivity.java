@@ -1,4 +1,4 @@
-package com.example.jumanji;
+package com.example.jumanji.Admin;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.example.jumanji.HomeActivity;
+import com.example.jumanji.R;
 
 public class AdminCategoryActivity extends AppCompatActivity {
 
@@ -28,7 +31,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         mantainProductsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminCategoryActivity.this,HomeActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, HomeActivity.class);
                 intent.putExtra("Admin","Admin");
                 startActivity(intent);
 
@@ -48,7 +51,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         CheckOrdersBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this,AdminNewOrdersActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminNewOrdersActivity.class);
                 startActivity(intent);
 
             }
@@ -80,7 +83,7 @@ public class AdminCategoryActivity extends AppCompatActivity {
         tShirts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminCategoryActivity.this,AdminAddNewProductsActivity.class);
+                Intent intent = new Intent(AdminCategoryActivity.this, AdminAddNewProductsActivity.class);
                 intent.putExtra("category","TShirts");
                 startActivity(intent);
 
